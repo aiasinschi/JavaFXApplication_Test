@@ -1,20 +1,15 @@
 package sample;
 
+import java.net.URL;
+import java.util.*;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.web.HTMLEditor;
-
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.Scanner;
 
 public class Controller implements Initializable{
     @FXML
@@ -26,15 +21,13 @@ public class Controller implements Initializable{
     @FXML
     private HTMLEditor htmlEditor;
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         parseButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
             public void handle(ActionEvent actionEvent) {
                 String ul = "<ul><li>", eul = "</li></ul>";
                 String htmlText = htmlEditor.getHtmlText();
                 int start = htmlText.indexOf(ul);
-                List<String> items =  new ArrayList<>();
+                List<String> items =  new ArrayList<String>();
                 if (start >= 0){
                     start += ul.length();
                     int end = htmlText.indexOf(eul, start);
