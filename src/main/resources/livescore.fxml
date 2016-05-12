@@ -57,11 +57,13 @@
       </FlowPane>
       <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Parse XML" fx:id="parseXMLButton">
+            <Button mnemonicParsing="false" text="Previous" fx:id="prevButton" disable="true"/>
+            <Button fx:id="parseXMLButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Parse XML">
                <FlowPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </FlowPane.margin>
             </Button>
+            <Button mnemonicParsing="false" text="Next" fx:id="nextButton" disable="true"/>
          </children>
       </FlowPane>
    </children>

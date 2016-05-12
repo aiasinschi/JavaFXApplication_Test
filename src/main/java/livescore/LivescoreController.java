@@ -22,6 +22,10 @@ import livescore.bean.ContactMark;
  */
 public class LivescoreController implements Initializable{
 	@FXML
+	public Button prevButton;
+	@FXML
+	public Button nextButton;
+	@FXML
 	private TextField firstNameField;
 	@FXML
 	private TextField lastNameField;
@@ -36,16 +40,40 @@ public class LivescoreController implements Initializable{
 	@FXML
 	private Button parseXMLButton;
 
+	private int currentRecord = 0;
+
 	private List<ContactMark> contactMarks;
+
+	private void displayCurrentRecord(){
+		firstNameField.setText(contactMarks.get(currentRecord).getFirstName());
+		lastNameField.setText(contactMarks.get(currentRecord).getLastName());
+		nickNameField.setText(contactMarks.get(currentRecord).getNickName());
+		marksField.setText(contactMarks.get(currentRecord).getMarks());
+	}
 
 	public void initialize(URL location, ResourceBundle resources) {
 		parseXMLButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				contactMarks = LivescoreParser.parse();
-				firstNameField.setText(contactMarks.get(0).getFirstName());
-				lastNameField.setText(contactMarks.get(0).getLastName());
-				nickNameField.setText(contactMarks.get(0).getNickName());
-				marksField.setText(contactMarks.get(0).getMarks());
+				displayCurrentRecord();
+				nextButton.setDisable(false);
+				prevButton.setDisable(false);
+			}
+		});
+		nextButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				if (contactMarks.size() > 0){
+					currentRecord = (currentRecord + 1) % contactMarks.size();
+					displayCurrentRecord();
+				}
+			}
+		});
+		prevButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				if (contactMarks.size() > 0){
+					currentRecord = (currentRecord - 1 + contactMarks.size()) % contactMarks.size();
+					displayCurrentRecord();
+				}
 			}
 		});
 	}
