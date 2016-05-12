@@ -18,7 +18,7 @@ import livescore.bean.ContactMark;
 /**
  * TODO: Document me
  *
- * @author Adrian Iasinschi (adrian.iasinschi@kepler-rominfo.com)
+ * @author Adrian Iasinschi (aiasinschi@gmail.com)
  */
 public class LivescoreController implements Initializable{
 	@FXML

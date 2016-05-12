@@ -16,7 +16,7 @@ import org.jdom2.input.SAXBuilder;
 /**
  * TODO: Document me
  *
- * @author Adrian Iasinschi (adrian.iasinschi@kepler-rominfo.com)
+ * @author Adrian Iasinschi (aiasinschi@gmail.com)
  */
 public class LivescoreParser {
 

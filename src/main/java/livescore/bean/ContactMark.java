@@ -7,7 +7,7 @@ package livescore.bean;
 /**
  * TODO: Document me
  *
- * @author Adrian Iasinschi (adrian.iasinschi@kepler-rominfo.com)
+ * @author Adrian Iasinschi (aiasinschi@gmail.com)
  */
 public class ContactMark {
 	private String firstName;

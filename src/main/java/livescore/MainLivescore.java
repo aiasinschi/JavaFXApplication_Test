@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 /**
  * TODO: Document me
  *
- * @author Adrian Iasinschi (adrian.iasinschi@kepler-rominfo.com)
+ * @author Adrian Iasinschi (aiasinschi@gmail.com)
  */
 public class MainLivescore extends Application {
 	@Override
